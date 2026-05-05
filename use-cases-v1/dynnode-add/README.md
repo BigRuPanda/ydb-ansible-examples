@@ -35,11 +35,19 @@ ansible-playbook ydb_platform.ydb.install_dynamic \
 
 ## Alternative: add a dynamic node and create a new database at the same time
 
+> The cluster must have been bootstrapped with `ydb_database_groups` set to a value that leaves capacity for a second database.
+
 To add a dynamic node instance for a new database `database2`:
 ```bash
 ansible-playbook ydb_platform.ydb.install_dynamic \
+  --skip-tags password \
   --extra-vars '{
-    "ydb_dynnodes": [{"instance": "c", "offset": 3, "dbname": "database2"}],
-    "ydb_dbname": "db2"}' \
+    "ydb_dynnodes": [
+      {"instance": "a", "offset": 1, "dbname": "database"},
+      {"instance": "b", "offset": 2, "dbname": "database2"},
+    ],
+    "ydb_dbname": "database2",
+    "ydb_database_groups": 8  # your number of storage groups for the new database
+  }'
   # -l static-node-1.ydb-cluster.com  # for a specific host
 ```
