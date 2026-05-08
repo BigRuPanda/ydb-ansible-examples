@@ -1,4 +1,4 @@
-# Add new storage node
+# Add new host (storage node)
 
 ## Requirements
 
@@ -23,7 +23,7 @@
    ansible-playbook ydb_platform.ydb.update_config
    ```
 
-3. Check the new host appeared in the monitoring UI:
+3. Check that the new host has appeared in the monitoring UI:
 ![step3](img/step3.png)
 
 4. Update `inventory/50-inventory.yaml` — add `static-node-4.ydb-cluster.com` to the `hosts` section.
@@ -45,7 +45,7 @@
     ansible-playbook ydb_platform.ydb.install_static -l static-node-4.ydb-cluster.com --skip-tags password,bootstrap
     ```
 
-9. Check the new host is active in the monitoring UI:
+9. Check that the new host is active in the monitoring UI:
 ![step9](img/step9.png)
 
 10. Allow the cluster to use the new disks (blobstorage config update):

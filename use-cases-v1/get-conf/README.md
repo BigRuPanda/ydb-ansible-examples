@@ -11,7 +11,7 @@
    ansible-playbook ydb_platform.ydb.generate_conf
    ```
 
-2. The configuration files will be saved in the `ydb_cluster_config` directory:
+2. The configuration files will be saved to the `ydb_cluster_config` directory:
    - For V1 clusters:
      - `ydb_cluster_config/ydbd-config-static.yaml` - static configuration
      - `ydb_cluster_config/ydb_cluster_dynconfig.yaml` - dynamic configuration

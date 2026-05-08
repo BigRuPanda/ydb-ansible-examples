@@ -8,9 +8,7 @@
 ## Steps
 
 1. Update `3-nodes-mirror-3-dc/files/config.yaml` with the required configuration changes.
-
-   Example: disable enable_external_data_sources feature flag.
-
+   Example: disable the enable_external_data_sources feature flag.
    ```yaml
    feature_flags:
       enable_external_data_sources: true  # change to false
@@ -20,7 +18,7 @@
    Before:
    ![step1](img/step1.png)
 
-2. Apply the updated configuration to all nodes and restart the cluster with a rolling restart `ansible-playbook ydb_platform.ydb.update_config`
+2. Apply the updated configuration to all nodes and restart the cluster with a rolling restart: `ansible-playbook ydb_platform.ydb.update_config`.
 
-3. Check changes in monitoring UI:
+3. Check changes in the monitoring UI:
 ![step3](img/step3.png)

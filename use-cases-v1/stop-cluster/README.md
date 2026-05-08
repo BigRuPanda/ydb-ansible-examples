@@ -5,7 +5,6 @@
 - preinstalled cluster with any configuration
 
 ## Stop the cluster
-   
 ```bash
 ansible-playbook ydb_platform.ydb.stop_cluster
 ```
@@ -17,7 +16,7 @@ To start the cluster after stopping, use:
 ansible-playbook ydb_platform.ydb.start_cluster
 ```
 
-## Stop specific host
+## Stop a specific host
 
 To stop YDB on a specific host:
 ```bash
