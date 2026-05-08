@@ -1,4 +1,4 @@
-# Replace broken host (storage node)
+# Replace broken host
 
 ## Requirements
 
@@ -32,5 +32,5 @@
     ansible-playbook ydb_platform.ydb.install_dynamic --skip-tags password,create_database
     ```
 
-6. Check that the host is active in the monitoring UI.
+6. Check that the host is active in the monitoring UI:
 ![step6](img/step6.png)
